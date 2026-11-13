@@ -42,7 +42,7 @@ py mesure.py
 ```
 
 ## Pourquoi une `File` basée sur `deque` ?
-Retirer le premier élément d'une liste Python oblige à décaler tous les autres : le temps croît vite avec la taille. `collections.deque` est conçu pour retirer au début sans rien décaler. Sur ma machine, pour 50 000 éléments, `mesure.py` donne environ 0,178 s pour `liste.pop(0)` contre 0,003 s pour `deque.popleft()` : un facteur d'environ 25. Passer à 100 000 éléments multiplie le temps de la liste bien plus que par deux.
+Retirer le premier élément d'une liste Python oblige à décaler tous les autres : le temps croît vite avec la taille. `collections.deque` est conçu pour retirer au début sans rien décaler. Sur ma machine, pour 50 000 éléments, `mesure.py` donne environ 0,178s pour `liste.pop(0)` contre 0,003s pour `deque.popleft()` : un facteur d'environ 25. Passer à 100 000 éléments multiplie le temps de la liste bien plus que par deux.
 
 ## Coût des opérations
 | Opération | Structure | Coût |
